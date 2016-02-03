@@ -5,19 +5,19 @@
 
 	videoApp.config(['$stateProvider', '$urlRouterProvider',
 		function($stateProvider, $urlRouterProvider) {
-			$urlRouterProvider.otherwise('/login');
+			//$urlRouterProvider.otherwise('login');
 
 			$stateProvider
-				.state('login', {
+				.state('homePage', {
 					url: '/login',
 					templateUrl: 'login/login.html',
 					controller: 'ControllerLogin'
-				})
-				.state('list', {
+				});
+/*				.state('list', {
 					url: '/list',
 					templateUrl: 'video-list/video-list.html',
 					controller: 'ControllerList'
-				})
+				})*/
 		}
 	]);
 })();
