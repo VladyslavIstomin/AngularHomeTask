@@ -1,0 +1,15 @@
+{
+  "version": "0.0.0",
+  "name": "CDP_task",
+  "description": "Ceate an angular application",
+  "license": "MIT",
+  "devDependencies": {
+    "karma": "^0.12.16",
+    "karma-jasmine": "~0.1.0",
+    "protractor": "^2.1.0",
+    "bower": "^1.3.1"
+  },
+  "scripts": {
+    "postinstall": "bower install"
+    }
+}
