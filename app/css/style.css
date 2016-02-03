@@ -41,10 +41,13 @@ form .input-box {
 }
 
 .btn-container {
-	text-align: center;
 	margin-top: 20px;
 }
 
 .video-list {
 	padding: 20px 0;
+}
+
+footer {
+	text-align: center;
 }

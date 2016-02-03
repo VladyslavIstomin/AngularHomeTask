@@ -6,9 +6,11 @@
 	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
 	<link rel="stylesheet" href="css/style.css"/>
 	<script src="../bower_components/angular/angular.js"></script>
-	<script src="../bower_components/angular-route/angular-route.js"></script>
+	<script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 	<script src="js/app.js"></script>
 	<script src="js/controller.js"></script>
+	<script src="login/Controller_login.js"></script>
+	<script src="video-list/Controller_video_list.js"></script>
 </head>
 <body>
 
@@ -18,10 +20,26 @@
 			<a href="#" class="logo"><img src="img/logo.jpg" alt="logo"/></a>
 			<h1>Welcome to video catalog</h1>
 		</div>
+		<div class="col-md-12">
+			<div class="control-group controls-box">
+				<div class="controls btn-container" ng-controller="ControllerBase">
+					<a class="btn" ui-sref="list" ng-hide="false">Log in</a>
+					<a class="btn" ui-sref="logout" ng-show="false">Log out</a>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 
-<div ng-view></div>
+<div ui-view></div>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<footer>Copyright 2016</footer>
+		</div>
+	</div>
+</div>
 
 </body>
 </html>

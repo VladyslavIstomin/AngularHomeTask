@@ -1,25 +1,24 @@
-'use strict';
+(function () {
+	'use strict';
 
-var videoApp = angular.module('videoApp', ['ngRoute', 'videoControllers']);
+	var videoApp = angular.module('videoApp', ['ui.router', 'loginModule', 'listModule']);
 
-videoApp.config(['$routeProvider',
-	function($routeProvider) {
-		$routeProvider
-			.when('/login', {
-				templateUrl: 'view/login.html',
-				controller: 'loginCtrl'
-			})
-			.when('/authorization', {
-				templateUrl: 'view/authorization.html',
-				controller: 'authCtrl'
-			})
-			.when('/list', {
-				templateUrl: 'view/video-list.html',
-				controller: 'videoCatalogCtrl'
-			})
-			.otherwise({
-				redirectTo: '/login'
-			});
-	}
-]);
+	videoApp.config(['$stateProvider', '$urlRouterProvider',
+		function($stateProvider, $urlRouterProvider) {
+			$urlRouterProvider.otherwise('/login');
+
+			$stateProvider
+				.state('login', {
+					url: '/login',
+					templateUrl: 'login/login.html',
+					controller: 'ControllerLogin'
+				})
+				.state('list', {
+					url: '/list',
+					templateUrl: 'video-list/video-list.html',
+					controller: 'ControllerList'
+				})
+		}
+	]);
+})();
 
