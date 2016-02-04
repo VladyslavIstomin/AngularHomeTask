@@ -3,7 +3,7 @@
 
 	var listModule = angular.module('listModule', []);
 
-	listModule.controller('ControllerList', ['$scope', '$http',
+	listModule.controller('controllerList', ['$scope', '$http',
 		function ($scope, $http) {
 			$http({method: 'GET', url: 'db/videos.json'}).success(function(data) {
 					$scope.videoList = data;

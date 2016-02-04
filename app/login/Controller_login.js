@@ -3,19 +3,15 @@
 
 	var loginModule = angular.module('loginModule', []);
 
-	loginModule.controller('ControllerLogin', ['$scope', '$location',
-		function($scope, $location) {
-			$scope.submitForm = function() {
-				 var userLogin = {
-					 login: $scope.login,
-					 pas: $scope.password
-				 };
+	loginModule.controller('controllerLogin', ['$scope', '$state', 'serviceLogin',
+		function($scope, $state, $serviceLogin) {
+			$scope.isInvalid = function() {
+				return $serviceLogin.invalid;
+			};
 
-				 $scope.login = '';
-				 $scope.password = '';
-
-				 $location.path('/list');
-			 }
+			$scope.onLogin = function() {
+				$serviceLogin.checkLogin($scope, $state, $scope.login, $scope.password)
+			}
 		}
 	]);
 })();
