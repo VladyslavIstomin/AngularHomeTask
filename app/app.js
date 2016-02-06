@@ -15,7 +15,7 @@
 				})
 				.state('list', {
 					url: '/list',
-					templateUrl: 'video-list/video-list.html',
+					templateUrl: 'todo-list/todo-list.html',
 					controller: 'controllerList'
 				})
 		}

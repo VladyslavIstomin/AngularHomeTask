@@ -1,0 +1,29 @@
+<div class="container-fluid">
+	<div class="row todo">
+		<div class="col-md-12 form-inline todo-row">
+			<label for="search">Search note</label>
+			<input type="text" class="form-control" id="search" placeholder="search" ng-model="search">
+		</div>
+		<div class="col-md-12 todo-row">Amount of notes: {{todoList.length}}</div>
+		<div class="col-md-12 todo-row">
+			<form class="form-inline" name="todo-form" role="form" id="todo-form"  ng-submit="createNote()">
+				<div class="form-group">
+					<input type="text" class="form-control" id="input-note" placeholder="Add your note" ng-model="todoInput">
+				</div>
+				<button type="submit" class="btn btn-success">Create</button>
+			</form>
+		</div>
+		<div class="col-md-12 todo-row">
+			<ul class="todo-list">
+				<li ng-repeat="todo in todoList | filter:search">
+					<label class="{{todo.checked}}">
+						<input type="checkbox" ng-model="todo.checked"> {{todo.text}}
+					</label>
+				</li>
+			</ul>
+		</div>
+		<div class="col-md-12 todo-row">
+			<button class="btn btn-danger" ng-click="deleteNote()">Delete</button>
+		</div>
+	</div>
+</div>
