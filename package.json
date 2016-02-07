@@ -1,6 +1,6 @@
 {
   "version": "0.0.0",
-  "name": "CDP_task",
+  "name": "CDP_task_todo_list",
   "description": "Ceate an angular application",
   "license": "MIT",
   "devDependencies": {

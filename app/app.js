@@ -1,7 +1,7 @@
 (function () {
 	'use strict';
 
-	var moduleApp = angular.module('app', ['ui.router', 'headApp', 'loginModule', 'listModule']);
+	var moduleApp = angular.module('app', ['ui.router', 'headApp', 'loginModule', 'listModule', 'LocalStorageModule']);
 
 	moduleApp.config(['$stateProvider', '$urlRouterProvider',
 		function($stateProvider, $urlRouterProvider) {
