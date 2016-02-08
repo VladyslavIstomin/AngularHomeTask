@@ -15,8 +15,9 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      '../app/todo-list/**/Controller*.js',
-      'unitTests/**/*Spec.js'
+      'unitTests/controllerSpec.js',
+      '../app/login/*.js',
+      '../app/app.js'
     ],
 
 

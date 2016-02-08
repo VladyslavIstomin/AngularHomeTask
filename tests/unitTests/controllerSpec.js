@@ -1,11 +1,19 @@
-'use strict';
 
-/* jasmine specs for controllers go here */
-describe('PhoneCat controllers', function() {
+describe('Controller To Do list', function() {
 
 	beforeEach(module('app'));
 
-	describe('PhoneListCtrl', function(){
+	var $controller;
 
+	beforeEach(inject(function(_$controller_){
+		$controller = _$controller_;
+	}));
+
+	describe('Login functionality', function () {
+		it('', function () {
+			var $scope = {};
+			var controller = $controller('controllerLogin', { $scope: $scope });
+		});
 	});
+
 });

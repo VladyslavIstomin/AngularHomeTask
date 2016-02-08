@@ -18,7 +18,7 @@
 					$scope.todoList = $serviceTodo.todoList;
 				}
 			} else {
-				throw Error('Local storage is not supported')
+				throw Error('Local storage is not supported');
 			}
 		}
 	]);
