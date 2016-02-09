@@ -48,3 +48,11 @@ footer {
 .true {
 	font-weight: normal;
 }
+
+.header {
+	overflow: hidden;
+}
+
+.view {
+	margin: 20px 0;
+}

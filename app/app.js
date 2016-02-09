@@ -5,7 +5,7 @@
 
 	moduleApp.config(['$stateProvider', '$urlRouterProvider',
 		function($stateProvider, $urlRouterProvider) {
-			$urlRouterProvider.otherwise('login');
+			$urlRouterProvider.otherwise('/login');
 
 			$stateProvider
 				.state('homePage', {

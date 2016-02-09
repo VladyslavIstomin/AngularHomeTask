@@ -3,14 +3,16 @@
 
 	var headApp = angular.module('headApp', []);
 
-	headApp.controller('controllerBase', ['$scope', '$state', 'serviceLogin',
-		function($scope, $state, $serviceLogin) {
+	headApp.controller('controllerBase', ['$scope', '$state', 'serviceLogin', 'localStorageService',
+		function($scope, $state, $serviceLogin, $serviceLocalStorage) {
+			$serviceLogin.setLoginStorage($serviceLocalStorage);
+
 			$scope.isLogin = function() {
-				return $serviceLogin.login;
+				return $serviceLogin.getLoginStorage($serviceLocalStorage);
 			};
 
 			$scope.logout = function() {
-				$serviceLogin.logOut($state)
+				$serviceLogin.logOut($state, $serviceLocalStorage)
 			};
 		}
 	]);
