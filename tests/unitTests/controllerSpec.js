@@ -1,19 +1,21 @@
+describe('Controller Login', function() {
+	'use strict';
 
-describe('Controller To Do list', function() {
+	var $scope, $rootScope, controller, $state;
 
-	beforeEach(module('app'));
+	beforeEach(function () {
+		module('loginModule');
 
-	var $controller;
-
-	beforeEach(inject(function(_$controller_){
-		$controller = _$controller_;
-	}));
-
-	describe('Login functionality', function () {
-		it('', function () {
-			var $scope = {};
-			var controller = $controller('controllerLogin', { $scope: $scope });
-		});
+		inject(function ($injector) {
+			$rootScope = $injector.get('$rootScope');
+			$scope = $rootScope.$new();
+			$state = $injector.get('$state');
+			controller = $injector.get('$controller')('controllerLogin', {$scope: $scope});
+		})
 	});
+
+	it('should check method test', function() {
+		expect($scope.test()).toBe(true);
+	})
 
 });

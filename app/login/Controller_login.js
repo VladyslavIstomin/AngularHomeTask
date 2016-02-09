@@ -11,6 +11,10 @@
 
 			$scope.onLogin = function() {
 				$serviceLogin.checkLogin($scope, $state, $scope.login, $scope.password)
+			};
+
+			$scope.test = function() {
+				return true;
 			}
 		}
 	]);
