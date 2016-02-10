@@ -16,10 +16,6 @@
 			$scope.onLogin = function() {
 				$serviceLogin.checkLogin($scope, $state, $scope.login, $scope.password, $serviceLocalStorage)
 			};
-
-			$scope.test = function() {
-				return true;
-			}
 		}
 	]);
 })();

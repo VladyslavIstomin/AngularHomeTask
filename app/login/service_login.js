@@ -25,11 +25,15 @@
 				this.setLoginStorage(storage);
 
 				state.go('list');
+
+				return true;
 			} else {
 				this.invalid = true;
 
 				scope.login = '';
 				scope.password = '';
+
+				return false;
 			}
 		};
 
@@ -39,7 +43,6 @@
 			this.setLoginStorage(storage);
 
 			state.go('homePage');
-		}
-
+		};
 	})
 })();
