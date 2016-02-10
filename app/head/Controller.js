@@ -1,21 +1,21 @@
 (function() {
 	'use strict';
 
-	var headApp = angular.module('headApp', []);
+	angular
+		.module('headApp', [])
+		.controller('controllerBase', ['$state', 'serviceLogin', 'localStorageService',
+			function($state, $serviceLogin, $serviceLocalStorage) {
+				var vm = this;
 
-	headApp.controller('controllerBase', ['$scope', '$state', 'serviceLogin', 'localStorageService',
-		function($scope, $state, $serviceLogin, $serviceLocalStorage) {
-			$serviceLogin.setLoginStorage($serviceLocalStorage);
+				vm.isLogin = function() {
+					return $serviceLogin.getLoginStorage($serviceLocalStorage);
+				};
 
-			$scope.isLogin = function() {
-				return $serviceLogin.getLoginStorage($serviceLocalStorage);
-			};
-
-			$scope.logout = function() {
-				$serviceLogin.logOut($state, $serviceLocalStorage)
-			};
-		}
-	]);
+				vm.logout = function() {
+					$serviceLogin.logOut($state, $serviceLocalStorage)
+				};
+			}
+		]);
 })();
 
 

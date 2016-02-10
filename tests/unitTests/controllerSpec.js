@@ -45,6 +45,13 @@ describe('Controller Login', function() {
 		expect($state.href(state)).toEqual('#/list');
 	});
 
+	it('should redirect to list page when user already log in', function() {
+		$serviceStorage.set('isLogin', true);
+
+		$scope.onLogin();
+		expect($state.href(state)).toEqual('#/list');
+	});
+
 	it('should not login user', function() {
 		$scope.login = 'else';
 		$scope.password = 'else';
